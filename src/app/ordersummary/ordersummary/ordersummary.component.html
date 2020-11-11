@@ -1,0 +1,29 @@
+<h2>
+         OrderSummary Details
+</h2>
+<!-- <ul *ngFor="let item of orderSummary">
+  <li>{{item.id}}. {{item.name}}. {{item.age}}</li>
+
+</ul> -->
+
+
+
+<div class="container mt-5">
+  <div>List of Employees</div>
+  <table class="table">
+    <thead>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let myorder of order">
+        <td>{{myorder.id}}</td>
+        <td>{{myorder.name}}</td>
+        <td>{{myorder.email}}</td>
+        <td>{{myorder.phone}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

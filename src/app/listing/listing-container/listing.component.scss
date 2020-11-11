@@ -1,0 +1,12 @@
+.button-container {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	display: flex;
+
+	.button-item {
+		font-size: 12px;
+		width: 100%;
+		padding: 4px 48px 4px 48px;
+		margin: 0px 16px 0px 16px;
+	}
+}
