@@ -12,6 +12,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { PaytmComponent } from './paytm/paytm-container/paytm.component';
 import { LearnComponent } from './learn/learn/learn.component';
 import { SigninComponent } from './signin/signin.component';
+import { CheckoutComponent } from './checkout/checkout-container/checkout.component';
+import { ObserveComponent } from './observe/observe-container/observe.component';
+import { ContactsComponent } from './contacts/contacts-container/contacts.component';
+import { RazorpayComponent } from './razorpay/razorpay-container/razorpay.component';
 
 
 
@@ -27,6 +31,10 @@ import { SigninComponent } from './signin/signin.component';
     PaytmComponent,
     LearnComponent,
     SigninComponent,
+    CheckoutComponent,
+    ObserveComponent,
+    ContactsComponent,
+    RazorpayComponent,
   ],
   imports: [
     SharedModule,

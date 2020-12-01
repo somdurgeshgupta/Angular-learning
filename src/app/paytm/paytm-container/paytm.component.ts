@@ -1,10 +1,8 @@
-// import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import {NgForm} from '@angular/forms';
-// import { PaytmService } from 'src/app/Services/paytm.service';
-import { IPaytm } from 'src/assets/data/paytm';
-import { environment } from '../../../environments/environment';
-import { HttpClient } from '@angular/common/http';
+
+import { PaytmService } from 'src/app/Services/paytm.service';
+import { FormGroup, FormControl,FormBuilder, Validators, FormArray, FormArrayName } from '@angular/forms';
 
 @Component({
   selector: 'app-paytm',
@@ -13,31 +11,30 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PaytmComponent implements OnInit {
 
+  paymentForm = new FormGroup({
+    name : new FormControl(''),
+    email : new FormControl(''),
+    phone : new FormControl(''),
+    amount : new FormControl('')
+  })
 
-  posts: IPaytm[];
-
-  paytm = new IPaytm();
-
-  error : string
-
-  constructor(private http:HttpClient) { }
+  constructor(private paytmService : PaytmService, private fb: FormBuilder) { 
+  }
 
   ngOnInit(){
   }
 
-  // onKey(key,event) {
-  //   this.paytm.name=event.target.value;
+  // paymoney(data){
+  //   console.log(data);
+  //   this.paytmService.payment(data).subscribe(result => {
+  //     console.log(result);
+  //   });
   // }
 
-  paynow(paymentForm : NgForm){
-    console.log(paymentForm);
+  paymoney(){
+    // console.log(this.paymentForm.value);
+    this.paytmService.payment(this.paymentForm.value).subscribe((result) => {
+      console.log(`this data is comming from server` +result);
+    });
   }
-
-  // paynow(paymentForm : NgForm){
-  //   console.log(this.paytm)
-  //   return this.paytmservice.payment(this.paytm).subscribe(
-  //     data => this.posts.push(data),
-  //     error => this.error = error
-  //   )
-  // }
 }

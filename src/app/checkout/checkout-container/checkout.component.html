@@ -1,0 +1,42 @@
+<div class="container">
+    <h4 class="pb-2">Checkout forms using reactive forms</h4>
+<form [formGroup]="checkoutForm" (ngSubmit)="postData();">
+    <div class="form-group row">
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+      <div class="col-sm-10">
+        <input type="email" class="form-control" id="inputEmail3" formControlName="emailAddr" required>
+        <span *ngIf="checkoutForm.get('emailAddr').touched && checkoutForm.get('emailAddr').hasError('required')"><small>Enter email Address</small></span>
+        <span *ngIf="checkoutForm.get('emailAddr').touched && checkoutForm.get('emailAddr').hasError('email')"><small>Enter valid email Address</small></span>
+        <span *ngIf="checkoutForm.get('emailAddr').touched && checkoutForm.get('emailAddr').hasError('minlength')"><small>Minimum 5 characters required</small></span>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputPassword3" class="col-sm-2 col-form-label">Quantity</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="inputPassword3" formControlName="quantity">
+        <span *ngIf="checkoutForm.get('quantity').touched && checkoutForm.get('quantity').hasError('required')"><small>Enter Quantity Address</small></span>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-2">Checkbox</div>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck1" formControlName="terms">
+          <label class="form-check-label" for="gridCheck1">
+            Agree to terms
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <button type="submit" [disabled]="!checkoutForm.valid" class="btn btn-primary">Checkout</button>
+        <button class="btn btn-link" (click)="resetForm();">Clear</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div>
+    Enterd value is : {{valueChangesTracked}}
+</div>

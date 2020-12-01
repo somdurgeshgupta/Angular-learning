@@ -1,37 +1,58 @@
-<body style="background-color:#f5f3ef">
+  <!-- <div class="row my-5">
+    <div class="col-md-4 offset-md-4">
+      <div class="card">
+        <div class="card-body">
+          <form #paymentForm="ngForm" (ngSubmit)="paymoney(paymentForm.value);">
+            <div class="form-group">
+              <label for="name">Name: </label>
+              <input class="form-control" type="text" id="name" name="name" value="" placeholder="Name of the Costomer" ngModel required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email: </label>
+              <input class="form-control" id="email" name="email" value="" placeholder="Email of the costomer" ngModel required>
+            </div>
+            <div class="form-group">
+              <label for="">Phone: </label>
+              <input class="form-control" type="text" id="phone" name="phone" value="" placeholder="Phone number of the costomer" ngModel required>
+               
+            </div>
+            <div class="form-group">
+              <label for="">Amount: </label>
+              <input class="form-control" type="text" id="amount" name="amount" value="" placeholder="Amount" ngModel required>
+            </div>
+              <button type="submit" [disabled] = "!paymentForm.valid" class="btn form-control btn-primary" >Pay Now</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
   <div class="row my-5">
     <div class="col-md-4 offset-md-4">
       <div class="card">
         <div class="card-body">
-          <form #paymentForm="ngForm" (ngSubmit)="paynow(paymentForm);">
+          <form [formGroup]="paymentForm" (ngSubmit)="paymoney()">
             <div class="form-group">
-              <label for="">Name: </label>
-              <input class="form-control" type="text" name="name" value="" placeholder="Name of the Costomer" ngModel required #name="ngModel">
-              <small class="form-text text-muted" *ngIf="name.touched && !name.valid">Enter Name</small>
+              <label for="name">Name: </label>
+              <input class="form-control" type="text" id="name" formControlName="name" value="" placeholder="Name of the Costomer"  required>
             </div>
             <div class="form-group">
-              <label for="">Email: </label>
-              <input class="form-control" email name="email" value="" placeholder="Email of the costomer" ngModel #email="ngModel"
-                required>
-                <small class="form-text text-muted" *ngIf="email.touched && !email.valid">Enter Email Address</small>
+              <label for="email">Email: </label>
+              <input class="form-control" id="email" formControlName="email" value="" placeholder="Email of the costomer"  required>
             </div>
             <div class="form-group">
               <label for="">Phone: </label>
-              <input class="form-control" type="text" name="phone" value="" placeholder="Phone number of the costomer" ngModel #phone="ngModel"
-                required>
-                <small class="form-text text-muted" *ngIf="phone.touched && !phone.valid">Enter Phone</small>
+              <input class="form-control" type="text" id="phone" formControlName="phone" value="" placeholder="Phone number of the costomer"  required>
+               
             </div>
             <div class="form-group">
               <label for="">Amount: </label>
-              <input class="form-control" type="text" name="amount" value="" placeholder="Amount" required ngModel #amount="ngModel">
-              <small class="form-text text-muted" *ngIf="amount.touched && !amount.valid">Enter Amount to Send</small>
+              <input class="form-control" type="text" id="amount" formControlName="amount" value="" placeholder="Amount"  required>
             </div>
-            <div class="form-group">
-              <button type="submit" class="btn form-control btn-primary" [disabled] = "!paymentForm.valid">Pay Now</button>
-            </div>
+              <button type="submit" [disabled] = "!paymentForm.valid" class="btn form-control btn-primary" >Pay Now</button>
           </form>
         </div>
       </div>
     </div>
   </div>
-</body>

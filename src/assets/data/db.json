@@ -1,0 +1,49 @@
+{
+  "contacts": [
+    {
+      "id": 1,
+      "firstName": "json-server",
+      "lastName": "typicode"
+    },
+    {
+      "id": 2,
+      "firstName": "myserver",
+      "lastName": "bestcode"
+    },
+    {
+      "id": 3,
+      "firstName": "jweb-server",
+      "lastName": "maahancode"
+    },
+    {
+      "id": "4",
+      "firstName": "ram",
+      "lastName": "aham"
+    },
+    {
+      "id": 6,
+      "firstName": "som",
+      "lastName": "gupta"
+    },
+    {
+      "id": 7,
+      "firstName": "som",
+      "lastName": "gupta"
+    },
+    {
+      "id": 8,
+      "firstName": "somefwfdfvd",
+      "lastName": "gupta"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

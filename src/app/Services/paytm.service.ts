@@ -17,7 +17,7 @@ export class PaytmService {
 
   constructor(private http:HttpClient) { }
 
-  payment(paytm : IPaytm){
+  payment(paytm){
    return this.http.post<any>(`http://${environment.local}/paynow`, paytm, this.httpOptions)
    .pipe(
     catchError(this.handleError)
